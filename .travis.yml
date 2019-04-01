@@ -44,6 +44,7 @@ before_script:
   - lxc storage create juju-zfs dir source=/var/snap/lxd/common/lxd/storage-pools/juju-zfs
 
 script:
-  - dpkg -l lxd  # check if lxd somehow got reinstalled
+  - ls -l /var/lib/lxd/unix.socket || true
+  - ls -l /var/snap/lxd/common/lxd/unix.socket || true
   - juju bootstrap localhost test --config 'identity-url=https://api.staging.jujucharms.com/identity' --config 'allow-model-access=true'
   - tox -e py3,integration,serial
