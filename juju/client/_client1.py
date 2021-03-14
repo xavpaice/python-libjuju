@@ -62,7 +62,7 @@ class ActionPrunerFacade(Type):
                                                    'properties': {'Result': {'$ref': '#/definitions/NotifyWatchResult'}},
                                                    'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ModelConfigResult)
     async def ModelConfig(self):
@@ -148,7 +148,7 @@ class AgentToolsFacade(Type):
                                                             'versions.',
                                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(None)
     async def UpdateToolsAvailable(self):
@@ -194,7 +194,7 @@ class AllWatcherFacade(Type):
                     'Stop': {'description': 'Stop stops the watcher.',
                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(AllWatcherNextResults)
     async def Next(self):
@@ -283,7 +283,7 @@ class ApplicationRelationsWatcherFacade(Type):
                              'type': 'object'},
                     'Stop': {'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ApplicationRelationsWatchResult)
     async def Next(self):
@@ -371,7 +371,7 @@ class ApplicationScalerFacade(Type):
                               'properties': {'Result': {'$ref': '#/definitions/StringsWatchResult'}},
                               'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ErrorResults)
     async def Rescale(self, entities=None):
@@ -508,7 +508,7 @@ class BackupsFacade(Type):
                     'Restore': {'properties': {'Params': {'$ref': '#/definitions/RestoreArgs'}},
                                 'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(BackupsMetadataResult)
     async def Create(self, notes=None):
@@ -681,7 +681,7 @@ class BundleFacade(Type):
                                                   'Result': {'$ref': '#/definitions/BundleChangesResults'}},
                                    'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(BundleChangesResults)
     async def GetChanges(self, yaml=None):
@@ -759,7 +759,7 @@ class CAASAdmissionFacade(Type):
                                          'properties': {'Result': {'$ref': '#/definitions/ControllerConfigResult'}},
                                          'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ControllerAPIInfoResults)
     async def ControllerAPIInfoForModels(self, entities=None):
@@ -949,7 +949,7 @@ class CAASAgentFacade(Type):
                                                    'properties': {'Result': {'$ref': '#/definitions/NotifyWatchResult'}},
                                                    'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(CloudSpecResults)
     async def CloudSpec(self, entities=None):
@@ -1207,7 +1207,7 @@ class CAASFirewallerFacade(Type):
                                           'properties': {'Result': {'$ref': '#/definitions/StringsWatchResult'}},
                                           'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ApplicationGetConfigResults)
     async def ApplicationsConfig(self, entities=None):
@@ -1454,7 +1454,7 @@ class CAASModelOperatorFacade(Type):
                                           'properties': {'Result': {'$ref': '#/definitions/NotifyWatchResult'}},
                                           'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(StringsResult)
     async def APIAddresses(self):
@@ -1875,7 +1875,7 @@ class CAASOperatorFacade(Type):
                                                   'Result': {'$ref': '#/definitions/StringsWatchResults'}},
                                    'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(StringsResult)
     async def APIAddresses(self):
@@ -2413,7 +2413,7 @@ class CAASOperatorProvisionerFacade(Type):
                                           'properties': {'Result': {'$ref': '#/definitions/StringsWatchResult'}},
                                           'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(StringsResult)
     async def APIAddresses(self):
@@ -2652,7 +2652,7 @@ class CAASOperatorUpgraderFacade(Type):
                                                        'Result': {'$ref': '#/definitions/ErrorResult'}},
                                         'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ErrorResult)
     async def UpgradeOperator(self, agent_tag=None, version=None):
@@ -3109,7 +3109,7 @@ class CAASUnitProvisionerFacade(Type):
                                                     'Result': {'$ref': '#/definitions/NotifyWatchResults'}},
                                      'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ApplicationGetConfigResults)
     async def ApplicationsConfig(self, entities=None):
@@ -3695,6 +3695,7 @@ class ClientFacade(Type):
                                                       'containers': {'patternProperties': {'.*': {'$ref': '#/definitions/MachineStatus'}},
                                                                      'type': 'object'},
                                                       'dns-name': {'type': 'string'},
+                                                      'hostname': {'type': 'string'},
                                                       'hardware': {'type': 'string'},
                                                       'has-vote': {'type': 'boolean'},
                                                       'id': {'type': 'string'},
@@ -4132,7 +4133,7 @@ class ClientFacade(Type):
                     'WatchAll': {'properties': {'Result': {'$ref': '#/definitions/AllWatcherId'}},
                                  'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(APIHostPortsResult)
     async def APIHostPorts(self):
@@ -5019,7 +5020,7 @@ class CloudFacade(Type):
                                                        'Result': {'$ref': '#/definitions/StringsResults'}},
                                         'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(CloudResults)
     async def Cloud(self, entities=None):
@@ -5211,7 +5212,7 @@ class CredentialManagerFacade(Type):
                                                                  'Result': {'$ref': '#/definitions/ErrorResult'}},
                                                   'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ErrorResult)
     async def InvalidateModelCredential(self, reason=None):
@@ -5284,7 +5285,7 @@ class CrossControllerFacade(Type):
                                             'properties': {'Result': {'$ref': '#/definitions/NotifyWatchResults'}},
                                             'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ControllerAPIInfoResults)
     async def ControllerInfo(self):
@@ -5629,7 +5630,7 @@ class CrossModelRelationsFacade(Type):
                                                                      'Result': {'$ref': '#/definitions/RelationStatusWatchResults'}},
                                                       'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ErrorResults)
     async def PublishIngressNetworkChanges(self, changes=None):
@@ -5997,7 +5998,7 @@ class DeployerFacade(Type):
                                                   'Result': {'$ref': '#/definitions/StringsWatchResults'}},
                                    'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(StringsResult)
     async def APIAddresses(self):
@@ -6350,7 +6351,7 @@ class ExternalControllerUpdaterFacade(Type):
                                                  'properties': {'Result': {'$ref': '#/definitions/StringsWatchResults'}},
                                                  'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ExternalControllerInfoResults)
     async def ExternalControllerInfo(self, entities=None):
@@ -6470,7 +6471,7 @@ class FanConfigurerFacade(Type):
                                                  'properties': {'Result': {'$ref': '#/definitions/NotifyWatchResult'}},
                                                  'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(FanConfigResult)
     async def FanConfig(self):
@@ -6564,7 +6565,7 @@ class FirewallRulesFacade(Type):
                                                         'Result': {'$ref': '#/definitions/ErrorResults'}},
                                          'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ListFirewallRulesResults)
     async def ListFirewallRules(self):
@@ -6646,7 +6647,7 @@ class HostKeyReporterFacade(Type):
                                                   'Result': {'$ref': '#/definitions/ErrorResults'}},
                                    'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ErrorResults)
     async def ReportKeys(self, entity_keys=None):
@@ -6759,7 +6760,7 @@ class ImageMetadataManagerFacade(Type):
                                             'Result': {'$ref': '#/definitions/ErrorResults'}},
                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ErrorResults)
     async def Delete(self, image_ids=None):
@@ -6932,7 +6933,7 @@ class KeyManagerFacade(Type):
                                                 'Result': {'$ref': '#/definitions/StringsResults'}},
                                  'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ErrorResults)
     async def AddKeys(self, ssh_keys=None, user=None):
@@ -7120,7 +7121,7 @@ class KeyUpdaterFacade(Type):
                                                            'Result': {'$ref': '#/definitions/NotifyWatchResults'}},
                                             'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(StringsResults)
     async def AuthorisedKeys(self, entities=None):
@@ -7224,7 +7225,7 @@ class LifeFlagFacade(Type):
                                              'Result': {'$ref': '#/definitions/NotifyWatchResults'}},
                               'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(LifeResults)
     async def Life(self, entities=None):
@@ -7348,7 +7349,7 @@ class LogForwardingFacade(Type):
                                                    'Result': {'$ref': '#/definitions/ErrorResults'}},
                                     'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(LogForwardingGetLastSentResults)
     async def GetLastSent(self, ids=None):
@@ -7464,7 +7465,7 @@ class LoggerFacade(Type):
                                                           'Result': {'$ref': '#/definitions/NotifyWatchResults'}},
                                            'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(StringResults)
     async def LoggingConfig(self, entities=None):
@@ -7656,7 +7657,7 @@ class MachineActionsFacade(Type):
                                                                 'Result': {'$ref': '#/definitions/StringsWatchResults'}},
                                                  'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ActionResults)
     async def Actions(self, entities=None):
@@ -7886,7 +7887,7 @@ class MachineUndertakerFacade(Type):
                                                             'Result': {'$ref': '#/definitions/NotifyWatchResults'}},
                                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(EntitiesResults)
     async def AllMachineRemovals(self, entities=None):
@@ -8202,7 +8203,7 @@ class MachinerFacade(Type):
                     'WatchAPIHostPorts': {'properties': {'Result': {'$ref': '#/definitions/NotifyWatchResult'}},
                                           'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(StringsResult)
     async def APIAddresses(self):
@@ -8522,7 +8523,7 @@ class MeterStatusFacade(Type):
                                                         'Result': {'$ref': '#/definitions/NotifyWatchResults'}},
                                          'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(MeterStatusResults)
     async def GetMeterStatus(self, entities=None):
@@ -8625,7 +8626,7 @@ class MetricsManagerFacade(Type):
                                                    'Result': {'$ref': '#/definitions/ErrorResults'}},
                                     'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(None)
     async def AddJujuMachineMetrics(self):
@@ -8750,7 +8751,7 @@ class MigrationFlagFacade(Type):
                                              'Result': {'$ref': '#/definitions/NotifyWatchResults'}},
                               'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(PhaseResults)
     async def Phase(self, entities=None):
@@ -8965,7 +8966,7 @@ class MigrationMasterFacade(Type):
                     'WatchMinionReports': {'properties': {'Result': {'$ref': '#/definitions/NotifyWatchResult'}},
                                            'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(SerializedModel)
     async def Export(self):
@@ -9206,7 +9207,7 @@ class MigrationMinionFacade(Type):
                               'properties': {'Result': {'$ref': '#/definitions/NotifyWatchResult'}},
                               'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(None)
     async def Report(self, migration_id=None, phase=None, success=None):
@@ -9300,7 +9301,7 @@ class MigrationStatusWatcherFacade(Type):
                     'Stop': {'description': 'Stop stops the watcher.',
                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(MigrationStatus)
     async def Next(self):
@@ -9550,7 +9551,7 @@ class MigrationTargetFacade(Type):
                                   'properties': {'Params': {'$ref': '#/definitions/MigrationModelInfo'}},
                                   'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(None)
     async def Abort(self, model_tag=None):
@@ -9861,7 +9862,7 @@ class ModelConfigFacade(Type):
                     'SetSLALevel': {'properties': {'Params': {'$ref': '#/definitions/ModelSLA'}},
                                     'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ModelConfigResults)
     async def ModelGet(self):
@@ -10065,7 +10066,7 @@ class ModelGenerationFacade(Type):
                                                    'Result': {'$ref': '#/definitions/ErrorResults'}},
                                     'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ErrorResult)
     async def AddBranch(self, branch=None):
@@ -10230,7 +10231,7 @@ class ModelSummaryWatcherFacade(Type):
                     'Stop': {'description': 'Stop stops the watcher.',
                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(SummaryWatcherNextResults)
     async def Next(self):
@@ -10413,7 +10414,7 @@ class ModelUpgraderFacade(Type):
                                                                 'Result': {'$ref': '#/definitions/NotifyWatchResults'}},
                                                  'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(IntResults)
     async def ModelEnvironVersion(self, entities=None):
@@ -10551,7 +10552,7 @@ class NotifyWatcherFacade(Type):
                     'Stop': {'description': 'Stop stops the watcher.',
                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(None)
     async def Next(self):
@@ -10642,7 +10643,7 @@ class OfferStatusWatcherFacade(Type):
                     'Stop': {'description': 'Stop stops the watcher.',
                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(OfferStatusWatchResult)
     async def Next(self):
@@ -10727,7 +10728,7 @@ class PayloadsFacade(Type):
                                             'Result': {'$ref': '#/definitions/PayloadListResults'}},
                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(PayloadListResults)
     async def List(self, patterns=None):
@@ -10865,7 +10866,7 @@ class PayloadsHookContextFacade(Type):
                                                'Result': {'$ref': '#/definitions/PayloadResults'}},
                                 'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(PayloadResults)
     async def List(self, entities=None):
@@ -10989,7 +10990,7 @@ class PingerFacade(Type):
     version = 1
     schema =     {'properties': {'Ping': {'type': 'object'}, 'Stop': {'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(None)
     async def Ping(self):
@@ -11091,7 +11092,7 @@ class ProxyUpdaterFacade(Type):
                                                                                 'Result': {'$ref': '#/definitions/NotifyWatchResults'}},
                                                                  'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ProxyConfigResults)
     async def ProxyConfig(self, entities=None):
@@ -11175,7 +11176,7 @@ class RelationStatusWatcherFacade(Type):
                     'Stop': {'description': 'Stop stops the watcher.',
                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(RelationLifeSuspendedStatusWatchResult)
     async def Next(self):
@@ -11263,7 +11264,7 @@ class RelationUnitsWatcherFacade(Type):
                     'Stop': {'description': 'Stop stops the watcher.',
                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(RelationUnitsWatchResult)
     async def Next(self):
@@ -11370,7 +11371,7 @@ class RemoteApplicationWatcherFacade(Type):
                              'type': 'object'},
                     'Stop': {'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(RemoteApplicationWatchResult)
     async def Next(self):
@@ -11463,7 +11464,7 @@ class RemoteRelationWatcherFacade(Type):
                     'Stop': {'description': 'Stop stops the watcher.',
                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(RemoteRelationWatchResult)
     async def Next(self):
@@ -11806,7 +11807,7 @@ class RemoteRelationsFacade(Type):
                     'WatchRemoteRelations': {'properties': {'Result': {'$ref': '#/definitions/StringsWatchResult'}},
                                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ErrorResults)
     async def ConsumeRemoteRelationChanges(self, changes=None):
@@ -12170,7 +12171,7 @@ class RemoteRelationsWatcherFacade(Type):
                              'type': 'object'},
                     'Stop': {'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(RemoteRelationsWatchResult)
     async def Next(self):
@@ -12370,7 +12371,7 @@ class ResourcesFacade(Type):
                                                      'Result': {'$ref': '#/definitions/ResourcesResults'}},
                                       'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(AddPendingResourcesResult)
     async def AddPendingResources(self, addcharmwithauthorization=None, entity=None, channel=None, force=None, macaroon=None, resources=None, tag=None, url=None):
@@ -12550,7 +12551,7 @@ class ResourcesHookContextFacade(Type):
                                                        'Result': {'$ref': '#/definitions/UnitResourcesResult'}},
                                         'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(UnitResourcesResult)
     async def GetResourceInfo(self, resource_names=None):
@@ -12650,7 +12651,7 @@ class RetryStrategyFacade(Type):
                                                           'Result': {'$ref': '#/definitions/NotifyWatchResults'}},
                                            'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(RetryStrategyResults)
     async def RetryStrategy(self, entities=None):
@@ -12758,7 +12759,7 @@ class SSHClientFacade(Type):
                                                   'Result': {'$ref': '#/definitions/SSHPublicKeysResults'}},
                                    'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(SSHAddressResults)
     async def PrivateAddress(self, entities=None):
@@ -12893,7 +12894,7 @@ class SingularFacade(Type):
                                             'Result': {'$ref': '#/definitions/ErrorResults'}},
                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ErrorResults)
     async def Claim(self, claims=None):
@@ -12966,7 +12967,7 @@ class StringsWatcherFacade(Type):
                     'Stop': {'description': 'Stop stops the watcher.',
                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(StringsWatchResult)
     async def Next(self):
@@ -13132,7 +13133,7 @@ class UndertakerFacade(Type):
                                             'properties': {'Result': {'$ref': '#/definitions/NotifyWatchResults'}},
                                             'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ModelConfigResult)
     async def ModelConfig(self):
@@ -13369,7 +13370,7 @@ class UnitAssignerFacade(Type):
                                              'properties': {'Result': {'$ref': '#/definitions/StringsWatchResult'}},
                                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ErrorResults)
     async def AssignUnits(self, entities=None):
@@ -13591,7 +13592,7 @@ class UpgradeSeriesFacade(Type):
                                                                        'Result': {'$ref': '#/definitions/NotifyWatchResults'}},
                                                         'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ErrorResults)
     async def FinishUpgradeSeries(self, args=None):
@@ -13887,7 +13888,7 @@ class UpgradeStepsFacade(Type):
                                                                              'Result': {'$ref': '#/definitions/ErrorResult'}},
                                                               'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(ErrorResult)
     async def ResetKVMMachineModificationStatusIdle(self, tag=None):
@@ -14034,7 +14035,7 @@ class UpgraderFacade(Type):
                                                        'Result': {'$ref': '#/definitions/NotifyWatchResults'}},
                                         'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(VersionResults)
     async def DesiredVersion(self, entities=None):
@@ -14235,7 +14236,7 @@ class UserManagerFacade(Type):
                                                 'Result': {'$ref': '#/definitions/UserInfoResults'}},
                                  'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(AddUserResults)
     async def AddUser(self, users=None):
@@ -14404,7 +14405,7 @@ class VolumeAttachmentPlansWatcherFacade(Type):
                     'Stop': {'description': 'Stop stops the watcher.',
                              'type': 'object'}},
      'type': 'object'}
-    
+
 
     @ReturnMapping(MachineStorageIdsWatchResult)
     async def Next(self):
